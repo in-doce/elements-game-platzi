@@ -44,11 +44,11 @@ function resultado (triunfo, empate, perdido) {
   alert("Has empatado un total de " + empate + " veces.");
 }
 
-let triunfos = 0,
-    empates = 0,
-    perdidas = 0,
-    jugador = 0,
-    cpu = 0;
+let triunfos = 0;
+let empates = 0;
+let jugador = 0;
+let cpu = 0;
+let perdidas = 0;
 
 // Ciclo de combate
 while (triunfos < 3 && perdidas < 3) {
