@@ -4,21 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="app.js"></script> -->
+  <script src="./js/game.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
   <title>Piedra, Papel Y Tijeras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
   <h1>¡Piedra, Papel y Tijeras! ✊✋✌️</h1>
 
   <section id="seleccion-avatar">
-    <h2>Elige tu avatar</h2>
-    <!-- Aca van los avatares a seleccionar -->
-    <button>Confirmar</button>
+    <h2>Customiza tu avatar:</h2>
+    <div class="box">
+      <label for="nombre">
+        Nombre:
+        <input type="text" name="avatar" id="name" placeholder="Sebas">
+      </label>
+      <p>Avatar:</p>
+      <label for="dragon">
+        <input type="radio" name="genero" id="dragon" value="dragon">
+        <span class="input-avatar">🐉</span> 
+      </label>
+      <label for="fantasma" title="Booo">
+        <input type="radio" name="genero" id="fantasma" value="fantasma">
+        <span class="input-avatar">👻</span> 
+      </label>
+      <label for="cabra">
+        <input type="radio" name="genero" id="cabra" value="cabra" checked>
+        <span class="input-avatar">🐐</span> 
+      </label>
+      <button id="confirmar-avatar">Confirmar</button>
+    </div>
   </section>
 
   <section id="seleccion-ataque">
-    <h2>Elige tu ataque</h2>
-    <p>Tu tienes <span>3</span> vidas</p>
+    <h2>Elige tu ataque:</h2>
+    <p><span id="nombre-jugador"></span> tienes <span>3</span> vidas</p>
     <p>El enemigo tiene <span>3</span> vidas</p>
     <button>✊ Piedra</button>
     <button>✋ Papel</button>
