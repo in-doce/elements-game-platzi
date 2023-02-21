@@ -2,9 +2,8 @@
 let ataqueJugador = '';
 let ataqueEnemigo = '';
 let resultado = '';
-let victorias = 0;
-let derrotas = 0;
-let empates = 0;
+let vidasJugador = 3;
+let vidasEnemigo = 3;
 
 function iniciarJuego() {
   // Selección de mascota del jugador	
@@ -74,27 +73,26 @@ function elementoAtaqueEnemigo() {
     ataqueEnemigo = 'tierra 🌱';
   }
   combate();
-  crearMensaje();
+  crearMensajeCombate();
 }
 
 // Combate
 function combate() {
   if (ataqueJugador == ataqueEnemigo) {
     resultado = 'Empataste 🫂';
-    empates++;
   } else if (ataqueJugador == 'tierra 🌱' && ataqueEnemigo == 'agua 💧' || ataqueJugador == 'agua 💧' && ataqueEnemigo == 'fuego 🔥' || ataqueJugador == 'fuego 🔥' && ataqueEnemigo == 'tierra 🌱') {
     resultado = 'Ganaste 🏆';
-    victorias++;
+    vidasEnemigo--;
   } else {
     resultado = 'Perdiste 😭';
-    derrotas++;
+    vidasJugador--;
   }
 }
 
 // Mensajes de combate
-function crearMensaje() {
+function crearMensajeCombate() {
   let parrafo = document.createElement('p');
-  let texto = document.createTextNode(`Tu mascota ataca con ${ataqueJugador} y el enemigo ataca con ${ataqueEnemigo}, ${resultado}. Llevas ${victorias} victorias, ${derrotas} derrotas y ${empates} empates.`);
+  let texto = document.createTextNode(`Tu mascota ataca con ${ataqueJugador} y el enemigo ataca con ${ataqueEnemigo}, ${resultado}`);
   parrafo.appendChild(texto);
   let mensajes = document.getElementById('mensajes');
   mensajes.appendChild(parrafo);
