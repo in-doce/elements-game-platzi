@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
+body {
+  background-color: #282828;
+  background-image: linear-gradient(132deg, #282828 0%, #ebdbb2 100%);
+  margin: 0;
+}
+p {
+  text-align: center;
+}
+.titulo {
+  font-size: 3rem;
+  color: #282828;
+  text-align: center;
+  margin: 20px 0;
+  padding: 0;
+}
+#container-mascota, #container-juego {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Selección de mascota */
+#seleccionar-mascota {
+  background-color: #ebdbb2;
+  height: 70vh;
+  width: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 17px 26px 39px 0px rgba(40,40,40,0.86);
+  border-radius: 10px;
+}
+.tarjeta-mascota {
+  height: auto;
+  width: 20vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin: 1vh;
+}
+.tarjeta-mascota:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.tarjetas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 40vh;
+  width: 60vh;
+}
+.perro {
+  background-image: linear-gradient(132deg, #282828 0%, #cc241d 100%);
+}
+.pez {
+  background-image: linear-gradient(132deg, #282828 0%, #458588 100%);
+}
+.dragon {
+  background-image: linear-gradient(132deg, #282828 0%, #98971a 100%);
+}
+input[type="radio"] {
+  margin: 1vh;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+input[type="radio"]:hover {
+  opacity: 1;
+}
+input[type="radio"]:checked {
+  opacity: 1;
+}
+#boton-mascota {
+  background-color: #ebdbb2;
+  height: 10vh;
+  width: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin: 20px 0;
+}
+#boton-mascota:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Sección del juego, mensajes y reinicio */
+#seleccionar-ataque {
+  background-color: #ebdbb2;
+  height: 70vh;
+  width: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+}
+#mensajes {
+  background-color: #ebdbb2;
+  height: 20vh;
+  width: 90vh;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flow-root;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
+}
+#mensajes::-webkit-scrollbar {
+  display: none;
+}
+#mensajes:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+#reiniciar {
+  background-color: #ebdbb2;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin: 20px 0;
+}
+#boton-reiniciar {
+  background-color: #ebdbb2;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#boton-reiniciar:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+#boton-fuego {
+  background-color: #cc241d;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#boton-fuego:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+#boton-agua {
+  background-color: #458588;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#boton-agua:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+#boton-tierra {
+  background-color: #98971a;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+#boton-tierra:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
