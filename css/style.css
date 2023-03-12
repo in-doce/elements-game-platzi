@@ -78,10 +78,7 @@ input[type="radio"] {
   transform: scale(1);
   transition: all 0.5s ease;
 }
-input[type="radio"]:hover {
-  opacity: 1;
-}
-input[type="radio"]:checked {
+input[type="radio"]:hover, input[type="radio"]:checked {
   opacity: 1;
 }
 #boton-mascota {
@@ -99,15 +96,11 @@ input[type="radio"]:checked {
   transition: all 0.5s ease;
   margin: 20px 0;
 }
-#boton-mascota:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
-}
 
 /* Sección del juego, mensajes y reinicio */
 #seleccionar-ataque {
   background-color: #ebdbb2;
-  height: 70vh;
+  height: 20vh;
   width: 90vh;
   display: flex;
   flex-direction: column;
@@ -116,26 +109,122 @@ input[type="radio"]:checked {
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
   border-radius: 10px;
 }
-#mensajes {
-  background-color: #ebdbb2;
-  height: 20vh;
-  width: 90vh;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0);
-  border-radius: 10px;
+
+.info-combate {
+  display: grid;
+  grid:
+  "ataque-jugador resultado-ronda ataque-enemigo" 1fr
+  "resultado resultado resultado" 0.5fr
+  / 1fr 1fr 1fr;
+  gap: 5vh;
+  row-gap: 3vh;
   margin: 20px 0;
-  display: flow-root;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  width: 90vh;
+}
+
+.info-jugadores {
+  display: grid;
+  grid:
+    "info-jugador info-enemigo" 1fr
+    / 45% 45%;
+  gap: 8px 10%;
+  margin: 20px 0;
+  width: 90vh;
+}
+
+#info-jugador { 
+  background-color: #ebdbb2;
+  border-radius: 10px;
+  height: 16.2vh;
+  width: auto;
   scroll-behavior: smooth;
   transition: all 0.5s ease;
+  grid-area: info-jugador; 
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-#mensajes::-webkit-scrollbar {
-  display: none;
-}
-#mensajes:hover {
+
+#info-jugador:hover {
   transform: scale(1.1);
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
 }
+
+#info-jugador::-webkit-scrollbar {
+  display: none;
+}
+
+#info-enemigo { 
+  background-color: #ebdbb2;
+  border-radius: 10px;
+  height: 16.2vh;
+  width: auto;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
+  grid-area: info-enemigo; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#info-enemigo:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+#info-enemigo::-webkit-scrollbar {
+  display: none;
+}
+
+#ataque-jugador, 
+#resultado-ronda, 
+#ataque-enemigo { 
+  grid-area: ataque-jugador;
+  background-color: #ebdbb2;
+  border-radius: 10px;
+  height: 20vh;
+  width: auto;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#ataque-jugador:hover,
+#ataque-enemigo:hover,
+#resultado-ronda:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+#ataque-jugador::-webkit-scrollbar,
+#ataque-enemigo::-webkit-scrollbar,
+#resultado-ronda::-webkit-scrollbar {
+  display: none;
+}
+
+#ataque-enemigo { 
+  grid-area: ataque-enemigo;
+}
+
+#resultado-ronda { 
+  grid-area: resultado-ronda;
+}
+
+#resultado { 
+  background-color: #ebdbb2;
+  border-radius: 10px;
+  height: 10vh;
+  width: auto;
+  scroll-behavior: smooth;
+  transition: all 0.5s ease;
+  grid-area: resultado;
+}
+
+#resultado:hover {
+  background-color: #d65d0e;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
 #reiniciar {
   background-color: #ebdbb2;
   height: auto;
@@ -150,16 +239,14 @@ input[type="radio"]:checked {
   transition: all 0.5s ease;
   margin: 20px 0;
 }
+
 #boton-reiniciar {
   background-color: #ebdbb2;
+  border-style: none;
   box-shadow: 0 0 0 0 rgba(0,0,0,0);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s ease;
-}
-#boton-reiniciar:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
 }
 #boton-fuego {
   background-color: #cc241d;
@@ -168,10 +255,7 @@ input[type="radio"]:checked {
   border: none;
   cursor: pointer;
   transition: all 0.5s ease;
-}
-#boton-fuego:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+  margin: 16.6px 0;
 }
 #boton-agua {
   background-color: #458588;
@@ -180,10 +264,7 @@ input[type="radio"]:checked {
   border: none;
   cursor: pointer;
   transition: all 0.5s ease;
-}
-#boton-agua:hover {
-  transform: scale(1.1);
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+  margin: 16.6px 0;
 }
 #boton-tierra {
   background-color: #98971a;
@@ -192,8 +273,80 @@ input[type="radio"]:checked {
   border: none;
   cursor: pointer;
   transition: all 0.5s ease;
+  margin: 16.6px 0;
 }
-#boton-tierra:hover {
+
+/* Hover botones para animaciones */
+#boton-reiniciar:hover, 
+#boton-fuego:hover, 
+#boton-agua:hover,
+#boton-tierra:hover,
+#boton-mascota:hover {
   transform: scale(1.1);
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 425px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+  #seleccionar-mascota {
+    width: 90%;
+    height: 90%;
+  }
+  .tarjetas {
+    flex-direction: column;
+    width: 90%;
+    height: 50%;
+  }
+  .tarjeta-mascota {
+    width: 90%;
+    height: 90%;
+  }
+  #boton-mascota {
+    width: 90%;
+  }
+  #seleccionar-ataque {
+    width: 90%;
+    height: 30%;
+    margin-top: 0;
+    justify-content: space-around;
+  }
+  h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+  #boton-fuego {
+    height: 5vh;
+    margin: 1% 0;
+  }
+  #boton-agua {
+    height: 5vh;
+    margin: 1% 0;
+  }
+    #boton-tierra {
+        height: 5vh;
+        margin: 1% 0;
+    }
+  .info-jugadores {
+    width: 90%;
+  }
+  .info-combate {
+    width: 90%;
+  }
+  #resultado-ronda p,
+  #ataque-jugador p,
+  #ataque-enemigo p,
+  #resultado p{
+    font-size: 0.7rem;
+  }
+  #info-enemigo p, span,
+  #info-jugador p {
+    font-size: 0.9rem;
+    margin: 1%;
+  }
+  #info-enemigo,
+    #info-jugador {
+        height: 100%;
+    }
 }
