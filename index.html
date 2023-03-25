@@ -4,12 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elementos</title>
-    <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;700&display=swap" rel="stylesheet">
   </head>
+
   <body>
     <div id="container-mascota">
       <section id="seleccionar-mascota">
@@ -17,20 +14,7 @@
 
         <h2>Elige tu mascota</h2>
 
-        <div class="tarjetas">
-          <label class="tarjeta-mascota dragon" for="dragon">
-          🐉
-          <input type="radio" name="mascota" id="dragon" checked/>
-        </label>
-        <label class="tarjeta-mascota perro" for="perro">
-          🐶
-          <input type="radio" name="mascota" id="perro" />
-        </label>
-        <label class="tarjeta-mascota pez" for="pez">
-          🦈
-          <input type="radio" name="mascota" id="pez" />
-        </label>
-        </div>
+        <div id="container-tarjetas-mascota" class="tarjetas"></div>
 
         <button id="boton-mascota">Seleccionar</button>
       </section>
@@ -40,10 +24,10 @@
       <section id="seleccionar-ataque">
         <h2>Elige tu ataque:</h2>
 
-        <div class="tarjetas">
-          <button id="boton-fuego">Fuego 🔥</button>
+        <div id="botones-jugador" class="tarjetas">
+          <!-- <button id="boton-fuego">Fuego 🔥</button>
           <button id="boton-agua">Agua 💧</button>
-          <button id="boton-tierra">Tierra 🌱</button>
+          <button id="boton-tierra">Tierra 🌱</button> -->
         </div>
       </section>
 
@@ -76,5 +60,7 @@
         <button id="boton-reiniciar">Reiniciar</button>
       </section>
     </div>
+
+    <script src="./js/mokepon.js"></script>
   </body>
 </html>
