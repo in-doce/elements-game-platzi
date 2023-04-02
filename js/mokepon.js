@@ -42,7 +42,7 @@ pez.ataque.push(
   { nombre: "💧", id: "boton-agua" },
   { nombre: "💧", id: "boton-agua" },
   { nombre: "🔥", id: "boton-fuego" },
-  { nombre: "🌱", id: "boton-tierra" }
+  { nombre: "🌱", id: "boton-tierra"}
 );
 
 mascotas.push(dragon, perro, pez);
@@ -90,9 +90,6 @@ function seleccionarMascotaEnemigo() {
   );
 }
 
-
-
-
 function elementoAtaqueEnemigo() {
   let ataqueAleatorio = aleatorio(1, 3);
   switch (ataqueAleatorio) {
@@ -126,7 +123,6 @@ function actualizarVidas(vidasJugador, vidasEnemigo) {
   modificarMensaje(vidasJugador, "vidas-jugador");
   modificarMensaje(vidasEnemigo, "vidas-enemigo");
 }
-
 // document.getElementById(id).innerHTML = mensaje;
 function crearMensajeGanador(ganador) {
   crearMensaje(`🏆 El ganador es ${ganador} 🏆`, "resultado");
