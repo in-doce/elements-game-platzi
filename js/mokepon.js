@@ -123,14 +123,12 @@ function actualizarVidas(vidasJugador, vidasEnemigo) {
   modificarMensaje(vidasJugador, "vidas-jugador");
   modificarMensaje(vidasEnemigo, "vidas-enemigo");
 }
-// document.getElementById(id).innerHTML = mensaje;
+
 function crearMensajeGanador(ganador) {
   crearMensaje(`🏆 El ganador es ${ganador} 🏆`, "resultado");
 
   // Desactivar botones para evitar ataques después de terminado el juego
-  desactivarBotones("boton-fuego");
-  desactivarBotones("boton-agua");
-  desactivarBotones("boton-tierra");
+  desactivarBotones("boton-ataque");
 
   // Mostrar botón de reinicio
   mostrarElemento("reiniciar", "flex");
@@ -169,7 +167,11 @@ function mostrarElemento(id, display) {
 }
 
 function desactivarBotones(id) {
-  document.getElementById(id).disabled = true;
+  let botones = document.getElementsByClassName(id);
+
+  for (const boton of botones) {
+      boton.disabled = true;
+  }
 }
 
 function obtenerMascotaJugador() {
